@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>90s TV Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="main-header">The Revolution </br> will not be Televised</h1>
+    </header>
+    <p>Click the plus and minus signs to change channels</p>
+    <div id="tv-container">
+        <div id="tv">
+            <img id="tv-frame" src="Assets/tvscreen.png" alt="90s TV">
+            <video id="tv-screen" autoplay ></video>
+        </div>
+        <div id="controls">
+            <img id="channel-up" src="Assets/plus.png" alt="Channel Forward">
+            <img id="channel-down" src="Assets/min.png" alt="Channel Back">
+           
+        </div>
+    </div>
+    <video autoplay muted loop id="background-video">
+        <source src="Assets/background.mov" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

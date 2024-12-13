@@ -1,0 +1,122 @@
+/* General Reset */
+body,
+h1,
+h2,
+div,
+img {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Monoton', cursive;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    /* Single background color */
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#main-header {
+    font-size: 60px;
+    color: #ff00ff;
+    /* Neon pink */
+    text-shadow: 3px 3px 0 #00ffff, 6px 6px 0 #0000ff;
+    /* Neon 3D effect */
+}
+
+#sub-header {
+    font-size: 24px;
+    color: #00ff00;
+    /* Neon green */
+    text-shadow: 2px 2px 0 #ff4500, 4px 4px 0 #8b0000;
+    /* Bold shadow effect */
+}
+
+/* TV Container */
+#tv-container {
+    position: relative;
+    width: 600px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* TV Styling */
+#tv {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#tv-frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#tv-screen {
+    position: absolute;
+    top: 18%;
+    left: 23%;
+    width: 53%;
+    height: 49%;
+    z-index: 2;
+    border: none;
+    border-radius: 8%;
+    object-fit: cover;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+}
+
+/* Controls Styling */
+#controls {
+    position: absolute;
+    top: 25%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 3;
+    width: 90px;
+    height: 90px;
+}
+
+#controls img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.7));
+}
+
+#controls img:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the video covers the entire screen without distortion */
+    z-index: -1;
+    /* Places the video behind all other content */
+}
