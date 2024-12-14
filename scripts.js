@@ -14,7 +14,7 @@ const channels = [
   'Assets/video3.mov',
   'Assets/video-2.mov',
   'Assets/lstvid.mov',
-  // Add up to 10 channels here
+   
 ];
 
 let currentChannel = 0;
