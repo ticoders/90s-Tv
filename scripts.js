@@ -2,7 +2,8 @@ const tvScreen = document.getElementById('tv-screen');
 const tvFrame = document.getElementById('tv-frame');
 const channelUp = document.getElementById('channel-up');
 const channelDown = document.getElementById('channel-down');
- 
+const clickSound = new Audio('Assets/tv-static-7019.mp3');
+
 
 const channels = [
   'Assets/AudreL.mov',
@@ -39,3 +40,14 @@ channelDown.addEventListener('click', () => {
 tvScreen.addEventListener('ended', () => {
   tvScreen.play();
 });
+
+// Function to play the sound on button click
+function playClickSound() {
+    clickSound.play();
+    setTimeout(() => {
+        clickSound.pause();  // Pause the sound
+        clickSound.currentTime = 0;   
+    }, 500);   
+}
+channelUp.addEventListener('click', playClickSound);
+channelDown.addEventListener('click', playClickSound);
