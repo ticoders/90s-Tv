@@ -38,3 +38,19 @@ channelDown.addEventListener('click', () => {
 tvScreen.addEventListener('ended', () => {
   tvScreen.play();
 });
+
+
+    function alignTvScreen() {
+        // Get the dimensions and position of the frame
+        const frameRect = tvFrame.getBoundingClientRect();
+
+        // Set the screen's dimensions and position dynamically
+        tvScreen.style.width = `${frameRect.width * 0.55}px`; // Adjust ratio for screen size
+        tvScreen.style.height = `${frameRect.height * 0.45}px`;
+        tvScreen.style.left = `${frameRect.left + frameRect.width * 0.23}px`;
+        tvScreen.style.top = `${frameRect.top + frameRect.height * 0.18}px`;
+    }
+
+    // Align the TV screen on load and on window resize
+    window.onload = alignTvScreen;
+    window.onresize = alignTvScreen;
