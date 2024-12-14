@@ -35,17 +35,7 @@ header {
     /* Neon 3D effect */
 }
 
-/* TV Container */
-#tv-container {
-    position: relative;
-    width: 600px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-
+ 
 /* TV Container */
 #tv-container {
     position: relative;
@@ -71,7 +61,7 @@ header {
     top: 18%;
     right:22%;
     width: 56%;
-    height: 60%;
+    height: 55%;
     z-index: 2;
     border-radius: 2%;
     object-fit: cover;
