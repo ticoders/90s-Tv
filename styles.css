@@ -28,19 +28,11 @@ header {
 }
 
 #main-header {
-    font-size: 60px;
+    font-size: 40px;
     color: #ff00ff;
     /* Neon pink */
     text-shadow: 3px 3px 0 #00ffff, 6px 6px 0 #0000ff;
     /* Neon 3D effect */
-}
-
-#sub-header {
-    font-size: 24px;
-    color: #00ff00;
-    /* Neon green */
-    text-shadow: 2px 2px 0 #ff4500, 4px 4px 0 #8b0000;
-    /* Bold shadow effect */
 }
 
 /* TV Container */
@@ -58,9 +50,7 @@ header {
 #tv-container {
     position: relative;
     width: 600px;
-    /* Adjust based on your design */
     height: 500px;
-    /* Adjust based on your design */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,7 +73,7 @@ header {
     width: 56%;
     height: 60%;
     z-index: 2;
-    border-radius: 4%;
+    border-radius: 2%;
     object-fit: cover;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
 }
