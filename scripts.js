@@ -11,7 +11,7 @@ const channels = [
   'Assets/vid3.mov',
   'Assets/vid-4.mov',
   'Assets/vid5.mov',
-  'Assets/vid6.mov',
+  'Assets/soultrain.mov',
   'Assets/video1.mov',
   'Assets/video3.mov',
   'Assets/video-2.mov',
