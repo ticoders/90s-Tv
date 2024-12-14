@@ -58,10 +58,10 @@ header {
 /* TV Screen Styling */
 #tv-screen {
     position: absolute;
-    top: 17.5%;
+    top: 17.8%;
     right:23.7%;
     width: 53.5%;
-    height: 48.5%;
+    height: 48.3%;
     z-index: 2;
     border-radius: 2%;
     object-fit: cover;
