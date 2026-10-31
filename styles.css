@@ -1,98 +1,195 @@
-/* General Reset */
-body,
-h1,
-h2,
-div,
-img {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
-body {
-    font-family: 'Monoton', cursive;
-    background-color: black;
-    color: white;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+:root {
+    --pink: #ff4bd8;
+    --cyan: #31f5ff;
+    --blue: #514dff;
+    --ink: #080612;
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
 }
 
-/* Header Styling */
-header {
+html {
+    min-width: 320px;
+    background: var(--ink);
+}
+
+body {
+    min-height: 100svh;
+    overflow-x: hidden;
+    font-family: 'Monoton', Impact, sans-serif;
+    background: var(--ink);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+    line-height: 1.5;
+    padding: var(--space-3) clamp(1rem, 4vw, 4rem) var(--space-2);
+}
+
+.experience-shell {
+    width: min(100%, 74rem);
+    margin: auto;
+    display: grid;
+    justify-items: center;
+    gap: var(--space-2);
     text-align: center;
-    margin-bottom: 20px;
+}
+
+.site-header {
+    text-align: center;
+}
+
+.eyebrow {
+    color: var(--cyan);
+    font-size: clamp(0.65rem, 1.4vw, 0.9rem);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
 }
 
 #main-header {
-    font-size: 40px;
-    color: #ff00ff;
-    /* Neon pink */
-    text-shadow: 3px 3px 0 #00ffff, 6px 6px 0 #0000ff;
-    /* Neon 3D effect */
+    max-width: 18ch;
+    color: var(--pink);
+    font-size: clamp(1.7rem, 5vw, 3.25rem);
+    line-height: 1.15;
+    text-shadow: 0.08em 0.08em 0 var(--cyan), 0.16em 0.16em 0 var(--blue);
 }
 
- 
-/* TV Container */
 #tv-container {
     position: relative;
-    width: 600px;
-    height: 500px;
+    width: min(100%, 42rem);
+    aspect-ratio: 1.2;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: var(--space-1);
 }
 
-/* TV Frame Styling */
+#tv {
+    position: relative;
+    height: 100%;
+    aspect-ratio: 1;
+    min-width: 0;
+    min-height: 0;
+}
+
 #tv-frame {
     position: relative;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     z-index: 1;
+    user-select: none;
 }
 
-/* TV Screen Styling */
 #tv-screen {
     position: absolute;
     top: 17.8%;
-    right:23.7%;
+    right: 23.7%;
     width: 53.7%;
     height: 47%;
     z-index: 2;
-    border-radius: 2%;
+    border-radius: 3%;
     object-fit: cover;
-    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.6);
+    background: #111;
+    box-shadow: 0 0 1.5rem rgba(255, 255, 255, 0.55);
 }
-/* Controls Styling */
+
 #controls {
     position: absolute;
     top: 18%;
-    right: -3%;
+    right: clamp(-1.25rem, -2vw, -0.5rem);
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: clamp(0.35rem, 1vw, 0.75rem);
     z-index: 3;
-    width: 90px;
-    height: auto;
+}
+
+#controls button {
+    width: clamp(3.2rem, 10vw, 5.5rem);
+    aspect-ratio: 1;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.7));
+    transition: transform 160ms ease, filter 160ms ease;
 }
 
 #controls img {
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.7));
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
-#controls img:hover {
+#controls button:hover {
     transform: scale(1.1);
-    transition: transform 0.2s ease-in-out;
+    filter: drop-shadow(0 0 0.7rem var(--cyan));
 }
 
-/* Background Video */
+#controls button:active {
+    transform: scale(0.96);
+}
+
+#controls button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+.instructions,
+.channel-status,
+.channel-error,
+.site-footer {
+    font-family: Arial, sans-serif;
+}
+
+.instructions {
+    color: #f0eafa;
+    font-size: clamp(0.85rem, 1.8vw, 1rem);
+}
+
+.channel-status {
+    position: absolute;
+    left: 28%;
+    bottom: 12%;
+    z-index: 4;
+    color: var(--cyan);
+    font: 700 0.65rem/1 Arial, sans-serif;
+    letter-spacing: 0.1em;
+    text-shadow: 1px 1px #000;
+}
+
+.channel-error {
+    color: #ffd1d1;
+    background: rgba(93, 0, 20, 0.8);
+    border: 1px solid #ff8c9a;
+    border-radius: 0.4rem;
+    padding: 0.55rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+.site-footer {
+    width: min(100%, 74rem);
+    margin: var(--space-2) auto 0;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.site-footer a {
+    color: white;
+    text-underline-offset: 0.2em;
+}
+
+.site-footer a:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+}
+
 #background-video {
     position: fixed;
     top: 0;
@@ -102,4 +199,33 @@ header {
     object-fit: cover;
     z-index: -1;
     filter: brightness(0.5);
+    pointer-events: none;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-inline: 0.75rem;
+    }
+
+    #tv-container {
+        width: calc(100% - 1.5rem);
+    }
+
+    #controls {
+        right: -1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+    #background-video {
+        display: none;
+    }
 }

@@ -1,7 +1,8 @@
 const tvScreen = document.getElementById('tv-screen');
-const tvFrame = document.getElementById('tv-frame');
 const channelUp = document.getElementById('channel-up');
 const channelDown = document.getElementById('channel-down');
+const channelStatus = document.getElementById('channel-status');
+const channelError = document.getElementById('channel-error');
 const clickSound = new Audio('Assets/tv-static-7019.mp3');
 
 
@@ -20,34 +21,46 @@ const channels = [
 ];
 
 let currentChannel = 0;
-tvScreen.src = channels[currentChannel];
+
+function tuneToChannel() {
+  channelStatus.textContent = `Channel ${String(currentChannel + 1).padStart(2, '0')}`;
+  channelError.hidden = true;
+  tvScreen.src = channels[currentChannel];
+  tvScreen.play().catch(() => {
+    // Playback can be blocked until the user interacts; the controls remain usable.
+  });
+}
 
 // Change channel
 channelUp.addEventListener('click', () => {
   currentChannel = (currentChannel + 1) % channels.length;
-  tvScreen.src = channels[currentChannel];
-  tvScreen.play();
+  tuneToChannel();
+
+  playClickSound();
 });
 
 channelDown.addEventListener('click', () => {
   currentChannel = (currentChannel - 1 + channels.length) % channels.length;
-  tvScreen.src = channels[currentChannel];
-  tvScreen.play();
+  tuneToChannel();
+  playClickSound();
 });
 
-
-// Autoplay video if not playing
 tvScreen.addEventListener('ended', () => {
-  tvScreen.play();
+  tvScreen.currentTime = 0;
+  tvScreen.play().catch(() => {});
 });
 
-// Function to play the sound on button click
 function playClickSound() {
-    clickSound.play();
-    setTimeout(() => {
-        clickSound.pause();  // Pause the sound
-        clickSound.currentTime = 0;   
-    }, 500);   
+  clickSound.currentTime = 0;
+  clickSound.play().catch(() => {});
+  setTimeout(() => {
+    clickSound.pause();
+    clickSound.currentTime = 0;
+  }, 500);
 }
-channelUp.addEventListener('click', playClickSound);
-channelDown.addEventListener('click', playClickSound);
+
+tvScreen.addEventListener('error', () => {
+  channelError.hidden = false;
+});
+
+tuneToChannel();
