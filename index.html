@@ -4,44 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>90s TV Experience</title>
+    <meta name="description" content="Tune into a playful 90s television experience.">
+    <title>90s TV Experience | The Revolution Will Not Be Televised</title>
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <header>
-        <h1 id="main-header">The Revolution </br> will not be Televised</h1>
-    </header>
-    <p>Click the plus and minus signs to change channels</p>
-    <div id="tv-container">
-        <div id="tv">
-            <img id="tv-frame" src="Assets/tvscreen.png" alt="90s TV">
-            <video id="tv-screen" autoplay ></video>
-        </div>
-        <div id="controls">
-            <img id="channel-up" src="Assets/plus.png" alt="Channel Forward">
-            <img id="channel-down" src="Assets/min.png" alt="Channel Back">
-           
-        </div>
-    </div>
-    <video autoplay muted loop id="background-video">
-        <source src="Assets/background.mov" type="video/mp4">
-        Your browser does not support the video tag.
+    <main class="experience-shell">
+        <header class="site-header">
+            <p class="eyebrow">Channel 90 // On air</p>
+            <h1 id="main-header">The Revolution<br>Will Not Be Televised</h1>
+        </header>
+        <p class="instructions">Use the channel controls to tune in.</p>
+        <section id="tv-container" aria-label="Interactive television">
+            <div id="tv">
+                <img id="tv-frame" src="Assets/tvscreen.png" alt="Retro television set">
+                <video id="tv-screen" autoplay muted playsinline aria-label="Current television channel"></video>
+                <p id="channel-status" class="channel-status" role="status" aria-live="polite">Channel 01</p>
+            </div>
+            <div id="controls" aria-label="Channel controls">
+                <button id="channel-up" type="button" aria-label="Go to next channel" title="Next channel">
+                    <img src="Assets/plus.png" alt="" aria-hidden="true">
+                </button>
+                <button id="channel-down" type="button" aria-label="Go to previous channel" title="Previous channel">
+                    <img src="Assets/min.png" alt="" aria-hidden="true">
+                </button>
+            </div>
+        </section>
+        <p id="channel-error" class="channel-error" role="alert" hidden>That channel could not be loaded. Try another one.</p>
+    </main>
+    <video autoplay muted loop id="background-video" aria-hidden="true">
+        <source src="Assets/background.mov" type="video/quicktime">
     </video>
 
-    <footer style="text-align: right; padding: 10px 0;">
-        <p style="display: inline-block; background: #007BFF; color: white; padding: 4px 8px; border-radius: 4px;">
-          © Tea Idiong 2026 
-          <a href="https://www.linkedin.com/in/darimaidiong/" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: underline;">
-            Find me on LinkedIn!
-          </a>
-        </p>
-        
+    <footer class="site-footer">
+        <p>© Tea Idiong 2026 · <a href="https://www.linkedin.com/in/darimaidiong/" target="_blank" rel="noopener noreferrer">Find me on LinkedIn</a></p>
     </footer>
-      
-      
-
     <script src="scripts.js"></script>
 </body>
 
