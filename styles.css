@@ -89,10 +89,10 @@ body {
 
 #tv-screen {
     position: absolute;
-    top: 17.8%;
+    top: 22.8%;
     right: 23.7%;
     width: 53.7%;
-    height: 47%;
+    height: 40.6%;
     z-index: 2;
     border-radius: 3%;
     object-fit: cover;
